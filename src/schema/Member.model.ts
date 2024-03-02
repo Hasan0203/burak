@@ -17,8 +17,8 @@ const memberSchema = new Schema(
 
     memberNick: {
         type: String,
-        index: {unique: true, sparse: true},
-        required: true
+        index: { unique: true, sparse: true },
+        required: true,
     },
 
     memberPhone: {
@@ -33,7 +33,7 @@ const memberSchema = new Schema(
         required: true,
     },
 
-    memberAdress: {
+    memberAddress: {
         type: String,
     },
 
