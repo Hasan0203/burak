@@ -20,3 +20,9 @@ function getNum(repl: string): string {
 }
 
 console.log(getNum("ha02san03"));
+
+
+/**
+ Traditional FD (Frontend Development) => BSSR (Admin)=> EJS framework orqali 
+ Modern FD (Frontend Development) => SPA (Users' app) => REACT library
+ */

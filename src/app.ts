@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("vieew engine", "ejs");
 
 /** 4-ROUTERS **/
-app.use("/admin", routerAdmin);       // SSR: EJS 
-app.use("/", router);                 //SPA: REACT
+app.use("/admin", routerAdmin);       // SSR
+app.use("/", router);                 //SPA
 
 export default app;    
