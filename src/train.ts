@@ -14,3 +14,9 @@
     GraphQL API
     ...
 */
+
+function getNum(repl: string): string {
+    return repl.replace(/\D/g, "");   
+}
+
+console.log(getNum("ha02san03"));
