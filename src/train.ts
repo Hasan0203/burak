@@ -1,25 +1,20 @@
-/* Project standards 
-    - Logging standards
-    - Naming standards 
-        function, method, variables => CAMEL case       goHome
-        class => PASCAL case                            MemberService
-        folder, file => KEBAB case
-        css => SNAKE case                               button_style
-    - Error handling
-*/
 
-/* 
-    Traditional API
-    Rest API
-    GraphQL API
-    ...
-*/
+// J-TASK
+function longWord(sent: string): string {
+   
+    const words = sent.split(" ");
+    let longestWord = "";
 
-function getNum(repl: string): string {
-    return repl.replace(/\D/g, "");   
+    for (const word of words) {
+      
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+    return longestWord;
 }
+console.log(longWord("I come from Uzbekistan"));
 
-console.log(getNum("ha02san03"));
 
 
 /**
