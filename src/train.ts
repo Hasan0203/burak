@@ -8,3 +8,10 @@
  }
 console.log(reverseSentence("we like coding!"));
 
+
+/* Validation
+   Frontend validation
+   Pipe validation burakda ishlatilmaydi.
+   Backend validation
+   Database validation
+*/
