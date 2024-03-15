@@ -1,17 +1,10 @@
 
- // TASK -L
+ // TASK - M
 
- function reverseSentence(sentence: string): string {
-    const words = sentence.split(" ");
-    const reversedWords = words.map(word => word.split("").reverse().join(""));
-    return reversedWords.join(" ");
- }
-console.log(reverseSentence("we like coding!"));
+ function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
+   return numbers.map(number => ({ number, square: number * number }));
+}
 
 
-/* Validation
-   Frontend validation
-   Pipe validation burakda ishlatilmaydi.
-   Backend validation
-   Database validation
-*/
+const result = getSquareNumbers([1, 2, 3]);
+console.log(result);
