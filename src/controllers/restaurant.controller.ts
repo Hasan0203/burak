@@ -32,6 +32,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
         console.log("getLogin");
         res.render("login");
     } catch (err) {
+        console.log("Error, getLogin:", err);
         res.redirect("/admin");
     }
 };
@@ -103,6 +104,28 @@ restaurantController.logout = async (
     }
 };
 
+restaurantController.getUsers = async (req: Request, res: Response) => {
+    try {
+        console.log("getUsers");
+        const result = await memberService.getUsers();
+        console.log("rseult:", result);
+        
+
+        res.render("users", { users: result });
+    } catch (err) {
+        console.log("Error, getUsers:", err);
+        res.redirect("/admin/login");
+    }
+};
+
+restaurantController.updateChosenUser = (req: Request, res: Response) => {
+    try {
+        console.log("updateChosenUser");
+    } catch (err) {
+        console.log("Error, updateChosenUser:", err);
+    }
+};
+
 restaurantController.checkAuthSession = async (
     req: AdminRequest,
     res: Response
@@ -123,15 +146,15 @@ restaurantController.verifyRestaurant = (
     res: Response,
     next: NextFunction
 ) => {
-        if(req.session?.member?.memberType === MemberType.RESTAURANT) {
-            req.member = req.session.member;
-            next();
-        } else {
-            const message = Message.NOT_AUTHENTICATED; 
-            res.send(
-                `<script> alert("${message}"); window.location.replace("/admin/login"); </script>`
-            );
-        }
-    };
+    if(req.session?.member?.memberType === MemberType.RESTAURANT) {
+        req.member = req.session.member;
+        next();
+    } else {
+        const message = Message.NOT_AUTHENTICATED; 
+        res.send(
+            `<script> alert("${message}"); window.location.replace("/admin/login"); </script>`
+        );
+    } 
+};
 
 export default restaurantController;
