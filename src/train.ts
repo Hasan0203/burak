@@ -1,10 +1,11 @@
 
- // TASK - M
+ // TASK - N
 
- function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
-   return numbers.map(number => ({ number, square: number * number }));
+ function palindromCheck(str: string): boolean {
+  const cleanedStr = str.toLowerCase().replace(/\s/g, '');
+  const reversedStr = cleanedStr.split('').reverse().join('');
+  return cleanedStr === reversedStr;
 }
 
-
-const result = getSquareNumbers([1, 2, 3]);
-console.log(result);
+console.log(palindromCheck("dad"));
+console.log(palindromCheck("son")); 
