@@ -1,11 +1,13 @@
 
- // TASK - P
+ // TASK - Q
 
- function objectToArray(obj: { [key: string]: number }): [string, number][] {
-    return Object.entries(obj);
+ function hasProperty(object: object, property: string): boolean {
+    return property in object;
 }
 
-console.log(objectToArray({a: 10, b: 20}));
+console.log(hasProperty({name: "BMW", model: "M3"}, "model"));
+console.log(hasProperty({name: "BMW", model: "M3"}, "year")); 
+
 
 
 
