@@ -1,12 +1,21 @@
 
- // TASK - Q
+ // TASK - R
 
- function hasProperty(object: object, property: string): boolean {
-    return property in object;
+ function calculate(spl: string): number {
+    const numbers = spl.split("+");
+    let total = 0;
+
+    for (const plus of numbers) {
+        const num = parseInt(plus, 4)
+        if (!isNaN(num)) {
+            total += num;
+        }
+    }
+
+    return total;
 }
+console.log(calculate("1+3"));
 
-console.log(hasProperty({name: "BMW", model: "M3"}, "model"));
-console.log(hasProperty({name: "BMW", model: "M3"}, "year")); 
 
 
 
